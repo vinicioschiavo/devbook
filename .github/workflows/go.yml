@@ -25,12 +25,12 @@ jobs:
       run: |
         cd api
         go build -v ./...
-        cd webapp
+        cd ../webapp
         go build -v ./...
 
     - name: Test
       run: |
         cd api
         go test -v ./...
-        cd webapp
+        cd ../webapp
         go test -v ./...
