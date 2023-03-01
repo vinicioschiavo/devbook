@@ -1,15 +1,17 @@
 package controllers
 
 import (
+	"encoding/json"
+	"io/ioutil"
+	"net/http"
+	"strconv"
+
 	"api/src/autenticacao"
 	"api/src/banco"
 	"api/src/modelos"
 	"api/src/repositorios"
 	"api/src/respostas"
 	"api/src/seguranca"
-	"encoding/json"
-	"io/ioutil"
-	"net/http"
 )
 
 // Login é responsável por autenticar um usuário na API
@@ -51,5 +53,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	w.Write([]byte(token))
+	usuarioID := strconv.FormatUint(usuarioSalvoNoBanco.ID, 10)
+
+	respostas.JSON(w, http.StatusOK, modelos.DadosAutenticacao{ID: usuarioID, Token: token})
 }
