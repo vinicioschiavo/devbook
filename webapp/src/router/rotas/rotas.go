@@ -2,9 +2,10 @@ package rotas
 
 import (
 	"net/http"
-	"webapp/src/middlewares"
 
 	"github.com/gorilla/mux"
+
+	"webapp/src/middlewares"
 )
 
 // Rota representa todas as rotas da Aplicação Web
