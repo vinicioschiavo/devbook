@@ -13,6 +13,6 @@ function criarPublicacao(evento) {
     }).done(function() {
         window.location = "/home";
     }).fail(function() {
-        Swal.fire("Ops...", "Erro ao criar a publicação!", "error");
+        alert("Erro ao criar a publicação!");
     })
 }
