@@ -1,17 +1,19 @@
 package controllers
 
 import (
+	"encoding/json"
+	"errors"
+	"io/ioutil"
+	"net/http"
+	"strconv"
+
+	"github.com/gorilla/mux"
+
 	"api/src/autenticacao"
 	"api/src/banco"
 	"api/src/modelos"
 	"api/src/repositorios"
 	"api/src/respostas"
-	"encoding/json"
-	"errors"
-	"github.com/gorilla/mux"
-	"io/ioutil"
-	"net/http"
-	"strconv"
 )
 
 // CriarPublicacao adiciona uma nova publicação no banco de dados
@@ -139,7 +141,7 @@ func AtualizarPublicacao(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if publicacaoSalvaNoBanco.AutorID != usuarioID {
-		respostas.Erro(w, http.StatusForbidden, errors.New("Não é possivel atualizar uma publicação que não seja a sua"))
+		respostas.Erro(w, http.StatusForbidden, errors.New("Não é possível atualizar uma publicação que não seja sua"))
 		return
 	}
 
@@ -198,7 +200,7 @@ func DeletarPublicacao(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if publicacaoSalvaNoBanco.AutorID != usuarioID {
-		respostas.Erro(w, http.StatusForbidden, errors.New("Não é possivel deletar uma publicação que não seja a sua"))
+		respostas.Erro(w, http.StatusForbidden, errors.New("Não é possível deletar uma publicação que não seja sua"))
 		return
 	}
 
@@ -210,7 +212,7 @@ func DeletarPublicacao(w http.ResponseWriter, r *http.Request) {
 	respostas.JSON(w, http.StatusNoContent, nil)
 }
 
-// BuscarPublicacoesPorUsuario traz todas as publicações de um usuário especifico
+// BuscarPublicacoesPorUsuario traz todas as publicações de um usuário específico
 func BuscarPublicacoesPorUsuario(w http.ResponseWriter, r *http.Request) {
 	parametros := mux.Vars(r)
 	usuarioID, erro := strconv.ParseUint(parametros["usuarioId"], 10, 64)
