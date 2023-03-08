@@ -7,6 +7,7 @@ import (
 	"strconv"
 
 	"webapp/src/config"
+	"webapp/src/cookies"
 	"webapp/src/modelos"
 	"webapp/src/requisicoes"
 	"webapp/src/respostas"
