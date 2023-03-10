@@ -2,10 +2,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevBook - Atualizar Publicação - {{ .Titulo }} </title>
-    <link href="/assets/css/bootstrap.css" rel="stylesheet"/>
+    <link href="/assets/css/bootstrap.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -14,26 +13,28 @@
     <div class="container-fluid">
         <div class="row mt-4">
             <div class="col-12">
-                <h3>Editar Publicação</h3>
+                <h3>Atualizar Publicação</h3>
                 <div class="form-group">
                     <label for="titulo">Título</label>
                     <input type="text" class="form-control" id="titulo" name="titulo"
-                        placeholder="Insira o titulo da sua publicação" value=" {{ .Titulo }}">
+                        placeholder="Insira o título da sua publicação" value=" {{ .Titulo }}">
                 </div>
                 <div class="form-group">
                     <label for="conteudo">Conteúdo</label>
-                    <textarea class="form-control" id="conteudo" name="conteudo" placeholder="Escreva o Conteúdo da sua publicação">{{ .Conteudo }}</textarea>
+                    <textarea class="form-control" id="conteudo" name="conteudo" placeholder="Escreva o conteúdo da sua publicação">{{ .Conteudo }}</textarea>
                 </div>
                 <button id="atualizar-publicacao" class="btn btn-info" data-publicacao-id="{{ .ID }}">
-                    Atualizar Publicação
+                    Salvar Alterações
                 </button>
             </div>
         </div>
     </div>
 
     {{ template "rodape" }}
-    {{ template "script" }}
-    
+    {{ template "scripts" }}
+
+    <script src="/assets/js/publicacoes.js"></script>
+
 </body>
 
 </html>
