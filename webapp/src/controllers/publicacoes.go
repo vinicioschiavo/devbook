@@ -4,11 +4,9 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"github.com/gorilla/mux"
 	"net/http"
 	"strconv"
-
-	"github.com/gorilla/mux"
-
 	"webapp/src/config"
 	"webapp/src/requisicoes"
 	"webapp/src/respostas"
