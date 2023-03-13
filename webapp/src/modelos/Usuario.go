@@ -6,6 +6,9 @@ import (
 	"fmt"
 	"net/http"
 	"time"
+
+	"webapp/src/config"
+	"webapp/src/requisicoes"
 )
 
 // Usuario representa uma pessoa utilizando a rede social
