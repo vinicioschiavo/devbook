@@ -1,10 +1,11 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevBook - Login!</title>
+    <title>DevBook - Login</title>
 
+    
     <link rel="stylesheet" type="text/css" href="/assets/css/login.css">
 </head>
 
@@ -12,7 +13,7 @@
     <div class="container-login">
         <div>
             <form class="devbook-form" id="login">
-                  <span>Seja Bem vindo ao DevBook!</span>
+                <span>Seja bem vindo ao DevBook!</span>
                 <div>
                     <input type="text" name="email" id="email" placeholder="Digite o seu e-mail" required="required">
                 </div>
@@ -24,7 +25,8 @@
             </form>
         </div>
     </div>
-    <script src="/assets/js/jquery.min.js"></script>
+    {{ template "scripts" }}
     <script src="/assets/js/login.js"></script>
 </body>
+
 </html>
